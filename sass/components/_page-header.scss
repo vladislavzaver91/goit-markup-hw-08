@@ -1,0 +1,142 @@
+.header {
+    position: relative;
+    
+    background-color: var(--primary-white-color);
+    border-bottom: 1px solid var(--header-line-color);
+}
+
+.header-container {
+    @extend %align-list;
+}
+
+.site-nav {
+    @extend %align-list;
+}
+
+.header__logo {
+    @media screen and (max-width: 767px) {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+/* site-nav__list */
+
+.site-nav__list {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @include tablet {
+        margin-left: 88px;
+    }
+
+    @include desktop {
+        margin-left: 93px;
+    }
+}
+
+.site-nav__item {
+    margin-left: 50px;
+    &:first-child {
+        margin-left: 0;
+    }
+
+    @include desktop{
+        margin-left: 40px;
+    }
+}
+
+.site-nav__link {
+    position: relative;
+    transition: color 250ms var(--primary-cubic);
+
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--title-text-color);
+    @include font (14px, 500, 1.14, 0.02em);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+        }
+}
+
+.courrent::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    background-color: var(--accent-color);
+}
+
+/* contact */
+
+.contact__list {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @include tablet {
+        margin-left: auto;
+    }
+
+    @include desktop {
+        display: flex;
+    }
+}
+
+.contact__item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+    @include desktop {
+        margin-bottom: 0;
+        margin-left: 50px;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.contact__link {
+
+    @extend %align-list;
+    width: 161px;
+
+    color: var(--primary-text-color);
+    @include font (14px, 500, 1.14, 0.02em);
+    
+    transition: color 250ms var(--primary-cubic);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+
+    @include desktop {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+.contact__icon {
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.site-nav .link.courrent {
+    color: var(--accent-color);
+}

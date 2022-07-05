@@ -1,0 +1,100 @@
+.hero {
+    max-width: 767px;
+    height: 400px;
+
+    padding-top: 118px;
+    padding-bottom: 118px;
+    margin: 0 auto;
+    
+    text-align: center;
+
+    background-color: var(--footer-bg-color);
+    background-image: linear-gradient(to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+        url('../images/hero-bg-mob.jpg');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include retina {
+        background-image: linear-gradient(to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+            url('../images/hero-bg-mob@2x.jpg');
+        }
+
+    @include tablet {
+        max-width: 1199px;
+        background-image: linear-gradient(to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+        url('../images/hero-bg-tab.jpg');
+
+        @include retina {
+            background-image: linear-gradient(to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+            url('../images/hero-bg-tab@2x.jpg');
+            }
+    }
+
+    @include desktop {
+        max-width: 1600px;
+        height: 600px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        background-image: linear-gradient(to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+        url('../images/hero-bg.jpg');
+
+        @include retina {
+            background-image: linear-gradient(to right,
+            rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+            url('../images/hero-bg@2x.jpg');
+            }
+    }
+}
+
+.hero__title {
+    max-width: 360px;
+
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    color: var(--primary-white-color);
+
+    @include font(26px, 900, 1.62, 0.06em);
+    text-align: center;
+    text-transform: uppercase;
+
+    @include desktop {
+        max-width: 696px;
+        @include font(44px, 900, 1.36, 0.06em);
+    }
+}
+
+.hero__btn {
+    display: inline-block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 32px;
+
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+    transition: background-color 250ms var(--primary-cubic),
+        color 250ms var(--primary-cubic);
+
+    @include font(16px, 700, 1.88, null);
+
+    &:hover,
+    &:focus {
+        color: var(--title-text-color);
+        background-color: var(--primary-white-color);
+    }
+}

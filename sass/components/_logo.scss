@@ -1,0 +1,36 @@
+.logo {
+    color: var(--primary-black-color);
+    font-family: Raleway, sans-serif;
+    @include font (24px, 700, 1.17, null);
+    @include desktop {
+        @include font (26px, 700, 1.19, null);
+    }
+
+    transition: color 250ms var(--primary-cubic);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.logo--accentuated {
+    color: var(--accent-color);
+}
+
+.footer__logo {
+    margin-bottom: 20px;
+
+    color: var(--primary-white-color);
+
+    transition: color 250ms var(--primary-cubic);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+
+@media screen and (max-width:1199px) {
+    text-align: center;
+}
+}

@@ -1,0 +1,137 @@
+.menu__btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 0;
+    margin-left: auto;
+
+    background-color: transparent;
+
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+
+    @include tablet {
+        display: none;
+    }
+
+    &:hover .menu__icon-menu,
+    &:focus .menu__icon-menu,
+    &:hover .menu__icon-cross,
+    &:focus .menu__icon-cross {
+        fill: var(--accent-color);
+        transition: fill 250ms var(--primary-cubic);
+    }
+}
+
+.menu__icon-cross {
+    display: none;
+}
+
+.menu__btn.is-open {
+    position: fixed;
+
+    & .menu__icon-cross {
+        display: block;
+    }
+
+    & .menu__icon-menu {
+        display: none;
+    }
+}
+
+.menu__mob-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 101vh;
+    padding: 48px 40px;
+
+    background-color: var(--primary-white-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04),
+        0px 2px 4px rgba(0, 0, 0, 0.08),
+        0px 1px 3px rgba(0, 0, 0, 0.16);
+
+    &.is-open {
+        z-index: 1;
+        transition: transform 250ms var(--primary-cubic);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow-y: auto;
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+.menu__mob-container .link.courrent {
+    color: var(--accent-color);
+}
+
+.mob-menu__item:not(:last-child),
+.mob-contact__item:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.mob-menu__link {
+    transition: color 250ms var(--primary-cubic);
+
+    color: var(--title-text-color);
+
+    @include font (40px, 500, 1.18, 0.02em);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.mob-contact__link--accentuated {
+    transition: color 250ms var(--primary-cubic);
+
+    @include font (34px, 500, 1.18, 0.02em);
+
+    color: var(--accent-color);
+}
+
+.mob-contact__link {
+    transition: color 250ms var(--primary-cubic);
+
+    @include font (24px, null, 1.17, null);
+    color: var(--primary-text-color);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+.mob-soc__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 64px;
+}
+
+.mob-soc__item:not(:last-child) {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+    @media screen and (max-width: 438px) {
+        margin-bottom: 10px;
+    }
+}
+
+.mob-soc__link {
+    transition: color 250ms var(--primary-cubic);
+
+    @include font (18px, null, 1.22, null);
+
+    color: var(--accent-color);
+}

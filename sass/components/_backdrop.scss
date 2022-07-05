@@ -1,0 +1,11 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    transition: opacity 250ms, visibility 250ms;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--backdrop-bg-color);
+}
+
